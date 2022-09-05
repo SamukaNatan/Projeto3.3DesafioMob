@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+    --ff-heading: 'Staatliches', sans-serif;
+    --ff-body: 'Palanquin', sans-serif;
+    --fs-body: 1.6rem;
+
+    --hue: 250;
+    --hd-primary: hsl(var(--hue), 17%, 62%);
+    --hd-secondary: hsl(var(--hue), 18%, 79%);
+    --bg-primary: hsl(var(--hue), 0%, 100%);
+    --bg-main: hsl(var(--hue), 100%, 97%);
+    --bg-secondary: hsl(var(--hue), 91%, 96%);
+    --hd-fc: hsl(var(--hue), 0%, 100%);
+    --bd-fc-primary: hsl(var(--hue), 84%, 12%);
+    --bd-fc-secondary: hsl(var(--hue), 17%,35%);
+
+    --fs-heading: clamp(4rem, 1rem + 5vw, 5.6rem);
+    --fs-bodyh: 2rem;
+    --fs-bodyp: 1rem;
+}
+
+
+body {
+    background-color: var(--bg-primary);
+}
+
+.page {
+    max-width: clamp(33rem, 30rem + 60vw, 117rem);
+    margin: 0 auto;
+    min-width: 36.6rem;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+header img {
+    width: 13rem;
+    height: auto;
+    margin: 0 12rem 3rem;
+}
+
+header {
+    font-family: var(--ff-heading);
+    text-align: center;
+    background-color: var(--hd-primary);
+    color: var(--hd-fc);
+    padding: 3rem 0;
+}
+
+header h1 {
+    background-color: var(--hd-secondary);
+    padding: 0.2rem 8.5rem;
+    font-weight: 400;
+    font-size: var(--fs-heading);
+}
+
+main {
+    background-color: var(--bg-main);
+    display: grid;
+    gap: 3.6rem;
+    padding: 1.4rem 3rem 6rem;
+}
+
+main p {
+    font-size: var(--fs-bodyp);
+    line-height: 1.5rem;
+    font-family: var(--ff-body);
+    font-style: normal;
+    color: var(--bd-fc-primary);
+    text-align: center;
+    font-weight: 550;
+    width: 100%;
+    height: 7.5rem;
+}
+
+.card {
+    position: relative;
+    font-family: var(--ff-heading);
+}
+
+.card img {
+    grid-template-areas: "A BB" "C DD";
+    transition: all 200ms;
+    animation: topdown 700ms 200ms backwards;
+}
+
+.card img:hover {
+    transform: scale(1.1);
+}
+
+.card h2 {
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+    font-size: var(--fs-bodyh);
+    font-style: normal;
+    font-weight: 400;
+    background-color: var(--bg-secondary);
+    color: var(--bd-fc-secondary);
+    border-radius: 20px;
+    padding: 0.4rem 2.5rem;
+    display: inline-flex;
+    align-items: center;
+    animation: downtop 700ms 350ms backwards;
+}
+
+@keyframes topdown {
+    0% {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes downtop {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
